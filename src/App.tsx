@@ -1,13 +1,22 @@
-import About from 'components/pages/About';
 import Home from 'components/pages/Home';
-import React from 'react';
+import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Menu from 'components/shared/Menu';
 
 export default () => (
-  <Router>
-    <Switch>
-      <Route path='/' exact component={Home} />
-      <Route path='/about' component={About} />
-    </Switch>
-  </Router>
+  <Fragment>
+    <CssBaseline />
+    <Menu />
+
+    <main>
+      <div style={{ marginTop: 90 }} />
+
+      <Router>
+        <Switch>
+          <Route path='/' exact component={Home} />
+        </Switch>
+      </Router>
+    </main>
+  </Fragment>
 );
