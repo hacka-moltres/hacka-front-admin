@@ -1,14 +1,20 @@
 import React, { memo } from 'react';
 import { AppBar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import logo from 'assets/images/logo.png';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   appBar: {
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    }),
-    paddingLeft: 30
+    height: 120,
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexDirection: 'row',
+    padding: '0 70px'
+  },
+  account: {
+    fontSize: 45
   }
 }));
 
@@ -17,7 +23,12 @@ const Menu = memo(() => {
 
   return (
     <AppBar position='fixed' className={classes.appBar}>
-      <h1>Insightzz</h1>
+      <div>
+        <img src={logo} alt='Logo' />
+      </div>
+      <div>
+        <AccountCircle className={classes.account} />
+      </div>
     </AppBar>
   );
 });
