@@ -20,7 +20,8 @@ const useStyles = makeStyles(() => ({
     borderRadius: 5,
     height: 150,
     marginRight: 30,
-    padding: 12
+    padding: 12,
+    boxShadow: '0px 2px 5px 0px rgba(0,0,0,0.08)'
   },
   text: {
     fontSize: 15
@@ -31,7 +32,8 @@ const useStyles = makeStyles(() => ({
   },
   container: {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    boxShadow: '0px 2px 5px 0px rgba(0,0,0,0.08)'
   },
   card: {
     height: 150,

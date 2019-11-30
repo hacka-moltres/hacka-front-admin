@@ -6,12 +6,14 @@ import logo from 'assets/images/logo.png';
 
 const useStyles = makeStyles(() => ({
   appBar: {
-    height: 120,
+    height: 80,
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
-    padding: '0 70px'
+    padding: '0 70px',
+    backgroundColor: '#0069FF',
+    boxShadow: 'none'
   },
   account: {
     fontSize: 45

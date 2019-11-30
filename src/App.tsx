@@ -1,13 +1,15 @@
 import Home from 'components/pages/Home';
-import React, { Fragment } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Menu from 'components/shared/Menu';
 
 import './assets/global.css';
+import { theme } from 'assets/theme';
+import { MuiThemeProvider } from '@material-ui/core';
 
 export default () => (
-  <Fragment>
+  <MuiThemeProvider theme={theme}>
     <CssBaseline />
     <Menu />
 
@@ -20,5 +22,5 @@ export default () => (
         </Switch>
       </Router>
     </main>
-  </Fragment>
+  </MuiThemeProvider>
 );
