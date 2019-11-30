@@ -1,5 +1,9 @@
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #f6f6f6;
 }
 
 main {
