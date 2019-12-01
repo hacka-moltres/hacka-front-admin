@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { AppBar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import logo from 'assets/images/logo.png';
+import perfil from 'assets/images/image-perfil.png';
+import { Avatar } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
   appBar: {
@@ -17,6 +17,15 @@ const useStyles = makeStyles(() => ({
   },
   account: {
     fontSize: 45
+  },
+  title: {
+    fontWeight: 400,
+    fontSize: '1.8rem'
+  },
+  avatar: {
+    fontWeight: 400,
+    display: 'flex',
+    alignItems: 'center'
   }
 }));
 
@@ -26,10 +35,11 @@ const Menu = memo(() => {
   return (
     <AppBar position='fixed' className={classes.appBar}>
       <div>
-        <img src={logo} alt='Logo' />
+        <h3 className={classes.title}>EDUZZ INSIGHTS</h3>
       </div>
-      <div>
-        <AccountCircle className={classes.account} />
+      <div className={classes.avatar}>
+        <div style={{ marginRight: 20 }}>Dan Palmieri</div>
+        <Avatar src={perfil} />
       </div>
     </AppBar>
   );
