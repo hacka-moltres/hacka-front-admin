@@ -117,7 +117,7 @@ const useStyles = makeStyles(() => ({
   root: {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   }
 }));
 
@@ -133,15 +133,21 @@ const Charts = memo(() => {
     amt: 1
   });
 
-  const handleMouseEnter = useCallback((o: any) => {
-    const { dataKey } = o;
-    setOpacity({ ...opacity, [dataKey]: 0.5 });
-  }, []);
+  const handleMouseEnter = useCallback(
+    (o: any) => {
+      const { dataKey } = o;
+      setOpacity({ ...opacity, [dataKey]: 0.5 });
+    },
+    [opacity]
+  );
 
-  const handleMouseLeave = useCallback((o: any) => {
-    const { dataKey } = o;
-    setOpacity({ ...opacity, [dataKey]: 1 });
-  }, []);
+  const handleMouseLeave = useCallback(
+    (o: any) => {
+      const { dataKey } = o;
+      setOpacity({ ...opacity, [dataKey]: 1 });
+    },
+    [opacity]
+  );
 
   return (
     <div className={classes.root}>
@@ -161,11 +167,35 @@ const Charts = memo(() => {
         <YAxis />
         <Tooltip />
         <Legend onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
-        <Line type='monotone' dataKey='Empreendedorismo' strokeOpacity={opacity.Empreendedorismo} stroke='#8884d8' activeDot={{ r: 5 }} />
-        <Line type='monotone' dataKey='Emagrecimento'    strokeOpacity={opacity.Emagrecimento}    stroke='#D4AF37' activeDot={{ r: 5 }}/>
-        <Line type='monotone' dataKey='Coaching'         strokeOpacity={opacity.Coaching}         stroke='#1c86ee' activeDot={{ r: 5 }}/>
-        <Line type='monotone' dataKey='Yoga'             strokeOpacity={opacity.Yoga}             stroke='#fd837b' activeDot={{ r: 5 }}/>
-        <Line type='monotone' dataKey='AutoAjuda'        strokeOpacity={opacity.AutoAjuda}        stroke='#7dfe3f' activeDot={{ r: 5 }}/>
+        <Line
+          type='monotone'
+          dataKey='Empreendedorismo'
+          strokeOpacity={opacity.Empreendedorismo}
+          stroke='#8884d8'
+          activeDot={{ r: 5 }}
+        />
+        <Line
+          type='monotone'
+          dataKey='Emagrecimento'
+          strokeOpacity={opacity.Emagrecimento}
+          stroke='#D4AF37'
+          activeDot={{ r: 5 }}
+        />
+        <Line
+          type='monotone'
+          dataKey='Coaching'
+          strokeOpacity={opacity.Coaching}
+          stroke='#1c86ee'
+          activeDot={{ r: 5 }}
+        />
+        <Line type='monotone' dataKey='Yoga' strokeOpacity={opacity.Yoga} stroke='#fd837b' activeDot={{ r: 5 }} />
+        <Line
+          type='monotone'
+          dataKey='AutoAjuda'
+          strokeOpacity={opacity.AutoAjuda}
+          stroke='#7dfe3f'
+          activeDot={{ r: 5 }}
+        />
       </LineChart>
     </div>
   );

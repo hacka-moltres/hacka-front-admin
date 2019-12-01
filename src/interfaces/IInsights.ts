@@ -9,4 +9,5 @@ export interface IInsights {
   value: number;
   valueText: string;
   action?: IAction[];
+  button: string;
 }
